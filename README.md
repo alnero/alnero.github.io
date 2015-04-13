@@ -8,3 +8,5 @@ PSD template is [here](http://font-family.ru/luchshie-besplatnye-psd-makety-sajt
 Red fox can be found [here](http://yoriden.deviantart.com/art/The-Boob-Dweller-298710127).
 
 Link to the site itself is [http://alnero.github.io/](http://alnero.github.io/)
+
+![alt text](https://raw.githubusercontent.com/alnero/alnero.github.io/master/img/site.jpg "Page preview")
