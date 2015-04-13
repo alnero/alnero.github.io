@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Some HTML 5 and CSS 3</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body onload="displayCurrentTime();">
+	<div id="main">
+		<div id="header">
+			<ul id="header_menu">
+				<li>Home
+					<ul>
+						<li><a href="#">Moscow</a></li>
+						<li><a href="#">London</a></li>
+						<li><a href="#">Tokio</a></li>
+					</ul>
+				</li>
+				<li>Send
+					<ul class="inner">
+						<li><a href="#">HTTP</a></li>
+						<li><a href="#">FTP</a></li>
+						<li><a href="#">SMTP</a></li>
+					</ul>
+				</li>
+				<li>Upload
+					<ul class="inner">
+						<li><a href="#">Doc</a></li>
+						<li><a href="#">Pict</a></li>
+						<li><a href="#">Video</a></li>
+					</ul>
+				</li>
+				<li>Donate
+					<ul class="inner">
+						<li><a href="#">$</a></li>
+						<li><a href="#">&#8364</a></li>
+						<li><a href="#">&#163</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<div id="content">
+			<div id="left_pane">
+				<div id="list">
+					<ul>
+						<li class="hvr-underline-from-right"><a href="#">Login</a></li>
+						<li class="hvr-underline-from-right"><a href="#">Register</a></li>
+						<li class="hvr-underline-from-right"><a href="#">News</a></li>
+						<li class="hvr-underline-from-right"><a href="#">Social</a></li>
+						<li class="hvr-underline-from-right"><a href="#">About</a></li>
+						<li class="hvr-underline-from-right"><a href="#">Contact</a></li>
+					</ul>
+				</div>
+				<div id="text_from_user">
+					<form name="send_text" action="#" method="post">
+						<textarea placeholder="Got smth?" name="submitted_text"></textarea>
+						<input type="submit" value="Say">
+					</form>
+				</div>
+			</div>
+
+			
+			
+			<div id="right_pane">
+				<h4>Advertisement</h4>
+			</div>
+
+			<div id="central_pane">
+				<form id="register_form" name="register_data" action="#" method="post">
+					<label for="second_name">Surname:</label>
+					<input id="second_name" type="text" name="second_name">
+					<label for="first_name">Name:</label>
+					<input id="first_name" type="text" name="first_name">
+					<label for="gender_select">Gender:</label> 
+					<select id="gender_select">
+						<option>Male</option>
+						<option>Female</option>
+					</select>
+
+					<input type="submit" value="Send">
+				</form>
+
+
+				
+	
+			</div>
+		</div>
+		<div id="footer">
+			<span id="current_time"></span>
+			<script type="text/javascript">
+				var monthNames = [
+					"January", "February", "March", "April", "May", "June", "July",
+        			"August", "September", "October", "November", "December" 
+				]
+
+				function displayCurrentTime(){
+					var now = new Date();
+					var month = now.getMonth();
+					var formatTimeString = now.getDate() + "-" + 
+								 		   monthNames[month] + "-" + 
+								 		   now.getFullYear() + 
+								 		   
+								 		   "<br/>" +
+								 		   
+								 		   (now.getHours() < 10 ? "0" + now.getHours() : now.getHours()) + ":" + 
+								 		   (now.getMinutes() < 10 ? "0" + now.getMinutes() : now.getMinutes()) + ":" +
+								 		   (now.getSeconds() < 10 ? "0" + now.getSeconds() : now.getSeconds());
+					
+					document.getElementById("current_time").innerHTML = formatTimeString;
+					displayTickingClock();
+				}
+
+				function displayTickingClock(){
+					var refreshRate = 1000;
+					setTimeout("displayCurrentTime()", refreshRate);
+				}
+			</script>
+
+		</div>
+	</div>
+</body>
+</html>
